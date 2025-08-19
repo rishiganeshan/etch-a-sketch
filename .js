@@ -19,13 +19,15 @@ function incrementOpacity(cell) {
     }
 
     if (parts[3] < 1) {
-        parts[3] = parseFloat(parts[3]) + 0.1;
+        parts[3] = parseFloat(parts[3]) + 0.2;
     }
-    
-
     cell.style.backgroundColor = `rgba(${parts.join(',')})`;
+}
 
 
+function assignRandomColor(cell) {
+    cell.style.backgroundColor = `rgba(${Math.floor(Math.random()*256)}, 
+    ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256) },0)`;
 }
 
 button.addEventListener("click", showPopup)
@@ -41,16 +43,21 @@ function createGrid(numberOfSquares = 16) {
         for (let j = 0; j < numberOfSquares; j++) {
             let cell = document.createElement("div")
             cell.className = "cell"
+            assignRandomColor(cell)
+            // console.log(cell)
             row.appendChild(cell)
         }
         container.append(row)
     }
 
+
     let cells = document.querySelectorAll(".cell")
     cells.forEach((cell) => {
         cell.addEventListener("mouseover", (event) => {
             // event.target.style.backgroundColor = "black"
+
             incrementOpacity(event.target)
+            
         })
 
     })

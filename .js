@@ -11,3 +11,11 @@ for (let i = 0; i < 16; i++) {
     }
     container.append(row)
 }
+
+let cells = document.querySelectorAll(".cell")
+cells.forEach((cell) => {
+    cell.addEventListener("mouseover", (event) => {
+        event.target.style.backgroundColor = "black"
+    })
+
+})

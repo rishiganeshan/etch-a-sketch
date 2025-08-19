@@ -3,12 +3,19 @@
     border-style: solid;
     border-color: black;
     background-color: white;
+    flex-grow: 1;
+    /* height: 100px;
+    width: 100px; */
 }
 .row {
     display: flex;
+    flex-grow: 1;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    width: 500px;
+    height: 500px
 }
